@@ -1,0 +1,134 @@
+1)
+public class AllSubString {
+    public static void main(String[] args) {
+        String s= "velTech";
+        StringBuilder str = new StringBuilder();
+        int count=1;
+        for(int i=0;i<s.length();i++){
+            for(int j=i+1;j<=s.length();j++){
+                str.append(s.substring(i,j));
+                System.out.println(s.substring(i,j));
+                count++;
+            }
+        }
+        System.out.println(count);
+        // formula to count the substring count
+        //(n*(n+1))/2 + 1;
+        System.out.println(RemoveDuplicates.logic(s));
+    }
+}
+2)
+import java.util.Arrays;
+
+public class CharClassDemo {
+    public static void main(String[] args) {
+        String s="VEltEcH";
+        char[] c=s.toCharArray();
+        int uc=0;
+
+        for(char t: c){
+
+            if(Character.isUpperCase(t)){
+                uc++;
+            }
+            System.out.println(Character.toLowerCase(t));
+
+        }
+        System.out.println(uc);
+        String ans = RemoveDuplicates.removeDuplicate(s);
+        char c2[]=ans.toCharArray();
+        Arrays.parallelSort(c2);
+        String ans2= new String(c2);
+        ans2=ans2.trim();
+        ans2=ans2.replace(",","");
+        ans2=ans2.replace("]","");
+        ans2=ans2.replace("[","");
+        System.out.println(ans2);
+    }
+}
+3)
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class RemoveDuplicates {
+    static String removeDuplicate(String s){
+        HashSet set1= new HashSet();
+        for(char t:s.toCharArray()){
+            set1.add(t);
+        }
+        return set1.toString();
+    }
+    static String logic(String s){
+        String ans ="";
+        for(char c:s.toCharArray()){
+            if(ans.indexOf(c)<0){
+                ans=ans+c;
+            }
+        }
+        return ans;
+    }
+}
+4)
+import javax.security.auth.callback.CallbackHandler;
+import java.util.Arrays;
+
+public class StringHandling {
+    public static void main(String[] args) {
+        String n="welcome to India";
+        String n2="hello";
+        n=n.toLowerCase();
+        n=n.trim();
+        char[] c =n.toCharArray();
+        Arrays.parallelSort(c);
+
+        String ans=c.toString();
+        for(int i=0;i<ans.length();i++){
+            if(ans.equals(" ")){
+                ans.replace(" ","");
+            }
+        }
+        System.out.println(c);
+        StringBuilder s3 = new StringBuilder("hello");
+
+    }
+}
+5)
+import java.util.Arrays;
+
+public class example {
+    public static void main(String[] args) {
+        String s="Indiaaaa2^3)*";
+        for(int i=0;i<s.length();i++){
+            System.out.println(s.charAt(i));
+        }
+        int counts=0;
+        int counta=0;
+        int countn=0;
+        System.out.println("The no of characters:"+s.length());
+        for(int i=0;i<s.length();i++){
+            char t =s.charAt(i);
+            int temp=(int)t;
+            if(temp>=32 && temp<=47){
+               counts++;
+            }
+            else if(temp>=48 && temp<=57){
+                countn++;
+            } else if (temp >= 65 && temp <= 90 || temp>= 97 && temp<=122) {
+                counta++;
+            }
+            else {
+                counts++;
+            }
+        }
+        System.out.println("Count of numbers:"+countn);
+        System.out.println("count of alpahabets:"+counta);
+        System.out.println("count of characters:"+counts);
+        for(int i=0;i<s.length();i++){
+            char t=s.charAt(i);
+            if(t=='a' || t=='e' || t=='i' || t=='o'|| t=='u')
+            {
+                System.out.println(t);
+            }
+        }
+    }
+}
