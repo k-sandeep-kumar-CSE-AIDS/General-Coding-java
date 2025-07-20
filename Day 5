@@ -1,0 +1,49 @@
+1)
+import java.util.*;
+class LO_demo{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<n;i++)
+        {
+            if(i%2==0 && i%100==0)
+            {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+2)
+import java.util.*;
+class LO_demo2{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++)
+        {
+            if( i%2==0 && i%5==0 && i%3==0 && i>=10000 && i<=99999)
+            {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+3)
+import java.util.*;
+class LO_demo3{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = 10;
+        int m=12;
+        int c= n^m;
+        System.out.println(" "+ ~c);
+        System.out.println(" "+ ~(n & m));
+        System.out.println(" "+ (n | m));
+        System.out.println(" "+ c);
+        System.out.println(" "+ (c<<2));
+        System.out.println(" "+ (c>>2));
+    }
+
+}
